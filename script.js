@@ -14,20 +14,16 @@ const DomElement = function (selector, height, width, bg, fontSize) {
 };
 DomElement.prototype.createElem = function () {
     if(this.selector.startsWith(".")){
-        console.log("ay");
         let newElem = document.createElement("div");
         let className = this.selector.slice(1);
         newElem.classList.add(className);
-        console.log(newElem);
         newElem.style.cssText = 'height:' + this.height +'; width: ' + this.width + '; font-size: ' + this.fontSize + '; background-color: ' + this.bg;
         newElem.innerText = "Это блок";
         document.body.appendChild(newElem);
     } else if (this.selector.startsWith("#")){
-        console.log("hi");
         let newElem = document.createElement("p");
         let idName = this.selector.slice(1);
         newElem.setAttribute("id", idName);
-        console.log(newElem);
         newElem.style.cssText = 'height:' + this.height +'; width: ' + this.width + '; font-size: ' + this.fontSize + '; background-color: ' + this.bg;
         newElem.innerText = "Это параграф";
         document.body.appendChild(newElem);
